@@ -1,19 +1,16 @@
 <template>
   <div class="hello">
     <h1 class="username">{{msg}}</h1>
-    <button @click="showUsername = !showUsername">Toggle Username</button>
-    <div v-if="showUsername">
       <BigYellowUsername username="gabrielTettamanti" />
-    </div>
   </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import BigYellowUsername from './BigYellowUsername.vue'
 export default {
   name: 'HelloWorld',
   components: {
-    BigYellowUsername: () => defineAsyncComponent(import(/* webpackChunkName: "BigYellowUsername" */ './BigYellowUsername.vue'))
+    BigYellowUsername
   },
   props: {
     msg: String
